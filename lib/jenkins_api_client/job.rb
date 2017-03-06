@@ -718,7 +718,7 @@ module JenkinsApi
 
         tree = options[:tree] || nil
         response_json = @client.api_get_request url, tree_string(tree)
-        response_json["builds"]
+        response_json["builds"] || response_json["allBuilds"]
       end
 
       # This method maps the color to status of a job
